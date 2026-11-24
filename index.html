@@ -8,73 +8,115 @@
 <meta property="og:title" content="Hôtel de la Paix Brazzaville — Hébergement, restaurant et bar à Poto-Poto"><meta property="og:type" content="website"><meta property="og:locale" content="fr_FR">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Montserrat:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Montserrat:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
 <script src="gate.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="home">
 <div class="promo">Maquette de démonstration réalisée par l'Atelier KPM · photos provisoires, contenus à valider avec l'hôtel</div>
 <header class="site"><div class="bar">
-  <a class="brand" href="index.html" aria-label="Hôtel de la Paix, accueil"><img src="logo.png" alt="" width="44" height="44"><span class="wm"><b>LA PAIX</b><i>HÔTEL</i></span></a>
-  <nav class="top" aria-label="Navigation principale"><a href="chambres.html">Chambres</a><a href="restaurant-bar.html">Restaurant &amp; Bar</a><a href="galerie.html">Galerie</a><a href="contact.html">Contact</a></nav>
+  <div class="left"><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="overlay"><span class="burger" aria-hidden="true"></span><span>Menu</span></button>
+  <nav class="top-links" aria-label="Liens rapides"><a href="chambres.html">Chambres</a><a href="restaurant-bar.html">Restaurant &amp; Bar</a><a href="galerie.html">Galerie</a><a href="contact.html">Contact</a></nav></div>
+  <a class="brand" href="index.html" aria-label="Hôtel de la Paix, accueil"><img class="mark" src="logo-mark.png" alt="" width="44" height="44"><span class="wm"><b>LA PAIX</b><i>HÔTEL</i></span></a>
   <a class="btn sm" href="contact.html#reserver">Réserver</a>
-  <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="overlay">Menu</button>
 </div></header>
 <div class="overlay" id="overlay" hidden role="dialog" aria-modal="true" aria-label="Menu principal">
-  <button class="x" id="menuClose" type="button">Fermer ✕</button>
-  <nav aria-label="Navigation"><a href="chambres.html">Chambres</a><a href="restaurant-bar.html">Restaurant &amp; Bar</a><a href="galerie.html">Galerie</a><a href="contact.html">Contact</a></nav>
-  <a class="btn" href="contact.html#reserver">Réserver</a>
+  <div class="ov-top"><button class="menu-btn" id="menuClose" type="button">Fermer ✕</button><a class="btn sm inv" href="contact.html#reserver">Réserver</a></div>
+  <nav class="ov-nav" aria-label="Navigation principale"><a href="chambres.html">Chambres</a><a href="restaurant-bar.html">Restaurant &amp; Bar</a><a href="galerie.html">Galerie</a><a href="contact.html">Contact</a></nav>
+  <div class="ov-sub">
+    <div><p class="mono">L'hôtel</p><a href="chambres.html#services">Services</a><a href="index.html#autour">Autour de l'hôtel</a></div>
+    <div><p class="mono">Contact</p><a href="contact.html#reserver">Demande de réservation</a><span>46 rue Yakomas, Poto-Poto<br>Brazzaville, République du Congo</span></div>
+  </div>
 </div>
-<section class="hero"><img class="mark" src="logo.png" alt="">
-<div class="wrap"><p class="mono">Brazzaville · Poto-Poto</p><h1>Hôtel de la Paix</h1>
-<p class="lead">Votre hôtel de haut standing à proximité de chez vous. Chambres climatisées, restaurant, bar et pâtisserie.</p>
-<div class="cta"><a class="btn inv" href="chambres.html">Voir les chambres</a><a class="btn" href="contact.html#reserver">Réserver</a></div></div></section>
+<section class="hero">
+  <img class="bg" src="hero.jpg" alt="">
+  <div class="inner">
+    <p class="mono">Brazzaville · Poto-Poto</p>
+    <h1>Hôtel de la Paix</h1>
+    <p class="lead">Votre hôtel de haut standing à proximité de chez vous.</p>
+    <p><a class="btn inv" href="chambres.html">Voir les chambres</a></p>
+    <p class="cue mono" aria-hidden="true">Défiler ↓</p>
+  </div>
+</section>
 <main id="main">
-<section class="sec"><div class="wrap split">
- <div><p class="mono">Bienvenue</p><h2>Séjourner, se retrouver, bien manger</h2>
- <p class="lead">Aussi connu sous le nom de Léon Hôtel de la Paix, l'hôtel vous accueille à Poto-Poto, à Brazzaville, pour un séjour d'affaires, en famille ou pour une occasion spéciale.</p>
- <p>Chambres familiales, suites nuptiales, restaurant, bar-lounge, pâtisserie et buffet : tout est réuni au même endroit, avec une réception ouverte jour et nuit.</p>
- <p><a class="link" href="chambres.html">Découvrir les chambres</a></p></div>
- <div class="ph tall" role="img" aria-label="Photo de l'hôtel à venir"><span>Photo de l'hôtel à venir</span></div>
-</div></section>
-<section class="sec alt"><div class="wrap">
- <div class="center narrow"><p class="mono">Sur place</p><h2>Tout au même endroit</h2></div>
- <div class="grid g4" style="margin-top:1.6rem">
-  <a class="card" href="chambres.html"><div class="ph " role="img" aria-label="Photo à venir"><span>Photo à venir</span></div><h3>Chambres &amp; suites</h3><p>Standard, familiale, suite et suite nuptiale, toutes climatisées.</p></a>
-  <a class="card" href="restaurant-bar.html#restaurant"><div class="ph " role="img" aria-label="Photo à venir"><span>Photo à venir</span></div><h3>Restaurant</h3><p>Une table pour le déjeuner, le dîner et le petit-déjeuner.</p></a>
-  <a class="card" href="restaurant-bar.html#bar"><div class="ph " role="img" aria-label="Photo à venir"><span>Photo à venir</span></div><h3>Bar &amp; lounge</h3><p>Un salon et une terrasse pour se détendre en soirée.</p></a>
-  <a class="card" href="restaurant-bar.html#patisserie"><div class="ph " role="img" aria-label="Photo à venir"><span>Photo à venir</span></div><h3>Pâtisserie &amp; buffet</h3><p>Pâtisseries maison et buffet à volonté.</p></a>
- </div></div></section>
-<section class="sec dark" id="services"><div class="wrap">
- <div class="center narrow"><p class="mono">Services</p><h2>Tout pour votre séjour</h2></div>
- <div class="hl">
-  <div class="h"><b>24h/24</b><span>Réception</span></div>
-  <div class="h"><b>Wi-Fi</b><span>Gratuit</span></div>
-  <div class="h"><b>Parking</b><span>Gratuit</span></div>
-  <div class="h"><b>Aéroport</b><span>Navette</span></div>
-  <div class="h"><b>Détente</b><span>Massage, billard</span></div>
-  <div class="h"><b>Affaires</b><span>Salles de réunion</span></div>
- </div>
- <p style="text-align:center;margin-top:1.6rem"><a class="btn inv" href="chambres.html#services">Tous les services</a></p>
-</div></section>
-<section class="sec" id="autour"><div class="wrap split">
- <div><p class="mono">Autour de l'hôtel</p><h2>Au cœur de Poto-Poto</h2>
- <p>L'hôtel se trouve au 46 rue Yakomas, dans le quartier de Poto-Poto, à Brazzaville. L'aéroport Maya-Maya est à environ 3,3 km.</p>
- <p>Pour vos trajets, la voiture reste le plus pratique. L'hôtel propose une navette aéroport et un service de location de voitures <span class="tbc">à confirmer</span>.</p>
- <p><a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=H%C3%B4tel+de+la+Paix+46+rue+Yakomas+Poto-Poto+Brazzaville" target="_blank" rel="noopener">Ouvrir dans Google Maps</a></p></div>
- <div class="card"><h3>Arrivée &amp; départ</h3><p>Arrivée à partir de 14h00, départ avant 12h00 <span class="tbc">à confirmer</span>.</p><h3 style="margin-top:.6rem">Réception</h3><p>Ouverte 24h/24.</p><h3 style="margin-top:.6rem">Réserver</h3><p>Téléphone : <a class="link" href="tel:+242066797580">+242 06 679 75 80</a></p></div>
-</div></section>
-<section class="sec alt"><div class="wrap center narrow"><p class="mono">Votre avis compte</p><h2>Vous avez séjourné chez nous ?</h2><p class="lead">Dites-nous ce que vous avez aimé, en 30 secondes et sans compte.</p><p><a class="btn" href="https://bowbosh22.github.io/paix-hotel-avis/index.html" target="_blank" rel="noopener">Donner votre avis</a></p></div></section>
+<section class="sec collage-sec">
+  <div class="collage wrap">
+    <p class="monogram" aria-hidden="true">P</p>
+    <figure class="c-big"><img src="chambre-standard.jpg" alt="Une chambre de l'Hôtel de la Paix" loading="lazy"></figure>
+    <figure class="c-small"><img src="restaurant.jpg" alt="Le restaurant de l'Hôtel de la Paix" loading="lazy"></figure>
+    <div class="c-text">
+      <p class="mono">Bienvenue à l'Hôtel de la Paix</p>
+      <h2>Séjourner, se retrouver, bien manger</h2>
+      <p class="sub">Poto-Poto, Brazzaville · aussi connu sous le nom de Léon Hôtel de la Paix</p>
+      <p>Chambres climatisées, familiales et suites nuptiales, restaurant, bar-lounge, pâtisserie et buffet : tout est réuni au même endroit, avec une réception ouverte jour et nuit.</p>
+      <p><a class="link" href="chambres.html">Voir les chambres</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec flush">
+  <div class="wrap head"><p class="mono">Table &amp; détente</p><h2>Sur place</h2></div>
+  <div class="panels" id="panels">
+    <a class="panel active" href="restaurant-bar.html#restaurant"><img src="restaurant.jpg" alt="" loading="lazy"><span class="vt">Restaurant</span><span class="ht"><small class="mono">Table &amp; détente</small><b>Restaurant</b></span></a>
+    <a class="panel" href="restaurant-bar.html#bar"><img src="bar.jpg" alt="" loading="lazy"><span class="vt">Bar &amp; lounge</span><span class="ht"><small class="mono">Salon et terrasse</small><b>Bar &amp; lounge</b></span></a>
+    <a class="panel" href="restaurant-bar.html#patisserie"><img src="patisserie.jpg" alt="" loading="lazy"><span class="vt">Pâtisserie</span><span class="ht"><small class="mono">Pâtisserie et buffet</small><b>Pâtisserie</b></span></a>
+    <a class="panel" href="chambres.html"><img src="chambre-familiale.jpg" alt="" loading="lazy"><span class="vt">En chambre</span><span class="ht"><small class="mono">Petit-déjeuner et repas</small><b>En chambre</b></span></a>
+  </div>
+</section>
+
+<section class="sec qsec" id="services">
+  <div class="wrap">
+    <div class="center narrow"><p class="mono">Services</p><h2 class="qh">Tout pour votre séjour</h2></div>
+    <div class="hl">
+      <div class="h"><b>24h/24</b><span class="mono">Réception</span></div>
+      <div class="h"><b>Aéroport</b><span class="mono">Navette</span></div>
+      <div class="h"><b>Détente</b><span class="mono">Massage et billard</span></div>
+      <div class="h"><b>Table</b><span class="mono">Restaurant, bar et pâtisserie</span></div>
+    </div>
+    <p class="center"><a class="btn inv" href="chambres.html#services">Tous les services</a></p>
+  </div>
+</section>
+
+<section class="sec" id="autour">
+  <div class="wrap">
+    <div class="head"><p class="mono">Le quartier</p><h2>Autour de l'hôtel</h2></div>
+    <div class="near">
+      <div class="n"><b>3,3 km</b><span class="mono">Aéroport Maya-Maya</span></div>
+      <div class="n"><b>Poto-Poto</b><span class="mono">46 rue Yakomas</span></div>
+      <div class="n"><b>24h/24</b><span class="mono">Réception, fast-food et supérette</span></div>
+    </div>
+    <p class="note-s">Une voiture est recommandée pour vos déplacements. Distances indicatives. Ouverture 24h/24 du fast-food et de la supérette <span class="tbc">à confirmer</span>.</p>
+  </div>
+</section>
+
+<section class="sec ruled news">
+  <div class="wrap split top">
+    <div><p class="mono">Votre avis compte</p><h2>Vous avez séjourné chez nous ?</h2><p>Dites-nous ce que vous avez aimé, en 30 secondes et sans compte.</p></div>
+    <div><p>Votre avis aide l'équipe à s'améliorer et aide les futurs voyageurs à choisir.</p><p><a class="btn inv" href="https://bowbosh22.github.io/paix-hotel-avis/index.html" target="_blank" rel="noopener">Donner votre avis</a></p></div>
+  </div>
+</section>
 </main>
-<a class="wa-fab" href="https://wa.me/242066797580?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20l%27H%C3%B4tel%20de%20la%20Paix." target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<a class="wa" href="https://wa.me/242066797580?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20l%27H%C3%B4tel%20de%20la%20Paix." target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<aside class="rate" id="rate" aria-label="Réservation directe">
+  <button class="rate-x" id="rateX" type="button" aria-label="Fermer">✕</button>
+  <p class="mono">Réservation directe</p>
+  <p class="rate-t">Directement auprès de l'hôtel.</p>
+  <a class="btn sm" href="contact.html#reserver">Vérifier les disponibilités</a>
+</aside>
 <footer class="site"><div class="wrap">
-  <div><b class="brand-f"><img src="logo.png" alt="" width="38" height="38"><span class="wm"><b>LA PAIX</b><i>HÔTEL</i></span></b><p>46 rue Yakomas, Poto-Poto<br>Brazzaville, République du Congo</p></div>
+  <div><b class="brand-f"><img class="mark" src="logo-mark.png" alt="" width="36" height="36"><span class="wm"><b>LA PAIX</b><i>HÔTEL</i></span></b><p>46 rue Yakomas, Poto-Poto<br>Brazzaville, République du Congo</p></div>
   <div><p class="mono">Explorer</p><a href="chambres.html">Chambres</a><a href="restaurant-bar.html">Restaurant &amp; Bar</a><a href="galerie.html">Galerie</a></div>
   <div><p class="mono">Séjour</p><a href="chambres.html#services">Services</a><a href="index.html#autour">Autour de l'hôtel</a><a href="contact.html#reserver">Réservations</a></div>
   <div><p class="mono">Contact</p><a href="tel:+242066797580">+242 06 679 75 80</a><span>E-mail <span class="tbc">à confirmer</span></span><a href="https://bowbosh22.github.io/paix-hotel-avis/index.html" target="_blank" rel="noopener">Donner votre avis</a></div>
-  <p class="legal">Maquette de démonstration par l'Atelier KPM, non officielle. Les emplacements « Photo à venir » seront remplacés par les photos de l'hôtel. Les mentions « à confirmer » attendent la validation de la direction.</p>
+  <p class="legal">Maquette de démonstration par l'Atelier KPM, non officielle. Les visuels « Photo à venir » seront remplacés par les photos de l'hôtel. Les mentions « à confirmer » attendent la validation de la direction.</p>
 </div></footer>
 <script src="script.js" defer></script>
-
+<script>
+(function(){
+  var ps=[].slice.call(document.querySelectorAll('#panels .panel'));
+  function act(p){ps.forEach(function(x){x.classList.toggle('active',x===p);});}
+  ps.forEach(function(p){p.addEventListener('mouseenter',function(){act(p);});p.addEventListener('focus',function(){act(p);});});
+})();
+</script>
 </body>
 </html>
