@@ -86,6 +86,11 @@
       <div class="n"><b>24h/24</b><span class="mono">Réception, fast-food et supérette</span></div>
     </div>
     <p class="note-s">Une voiture est recommandée pour vos déplacements. Distances indicatives. Ouverture 24h/24 du fast-food et de la supérette <span class="tbc">à confirmer</span>.</p>
+    <div class="trio">
+      <img style="--r:1.6" src="terrasse.jpg" alt="Terrasse de l'Hôtel de la Paix" loading="lazy">
+      <img style="--r:1.6" src="reception.jpg" alt="Réception de l'Hôtel de la Paix" loading="lazy">
+      <img style="--r:1.6" src="salle-reunion.jpg" alt="Salle de réunion de l'Hôtel de la Paix" loading="lazy">
+    </div>
   </div>
 </section>
 
@@ -93,6 +98,22 @@
   <div class="wrap split top">
     <div><p class="mono">Votre avis compte</p><h2>Vous avez séjourné chez nous ?</h2><p>Dites-nous ce que vous avez aimé, en 30 secondes et sans compte.</p></div>
     <div><p>Votre avis aide l'équipe à s'améliorer et aide les futurs voyageurs à choisir.</p><p><a class="btn inv" href="https://bowbosh22.github.io/paix-hotel-avis/index.html" target="_blank" rel="noopener">Donner votre avis</a></p></div>
+  </div>
+</section>
+
+<section class="nlb" aria-labelledby="nl-t">
+  <div class="nlb-ph"><img src="facade.jpg" alt="Façade de l'Hôtel de la Paix" loading="lazy"></div>
+  <div class="nlb-band">
+    <div class="nlb-in">
+      <h2 id="nl-t">Restons en contact</h2>
+      <form id="nl" novalidate>
+        <label for="nl-nom"><span>Nom</span><input id="nl-nom" name="nom" placeholder="Votre nom" autocomplete="name" required></label>
+        <label for="nl-mail"><span>E-mail</span><input id="nl-mail" name="email" type="email" placeholder="Votre e-mail" autocomplete="email" required></label>
+        <button class="btn" type="submit">S'inscrire</button>
+        <label class="check" for="nl-ok"><input id="nl-ok" type="checkbox" required> J'accepte de recevoir les actualités et offres de l'Hôtel de la Paix. Désinscription possible à tout moment.</label>
+        <p id="nl-msg" class="sent" hidden></p>
+      </form>
+    </div>
   </div>
 </section>
 </main>
@@ -118,5 +139,21 @@
   ps.forEach(function(p){p.addEventListener('mouseenter',function(){act(p);});p.addEventListener('focus',function(){act(p);});});
 })();
 </script>
+<script>  (function(){var f=document.getElementById('nl'),m=document.getElementById('nl-msg'),SB='https://eetuxvpykvedlsujxxvd.supabase.co',K='sb_publishable_g5yhqAHpirBpQmeBWjw5PQ_qwC762me';
+function say(t,ok){m.hidden=false;m.textContent=t;m.setAttribute('role','status');m.style.color=ok?'':'#ff8a8a'}
+f.addEventListener('submit',function(e){e.preventDefault();
+ var nom=document.getElementById('nl-nom').value.trim(),mail=document.getElementById('nl-mail').value.trim().toLowerCase(),okc=document.getElementById('nl-ok').checked,b=f.querySelector('button[type=submit]');
+ if(!nom)return say('Indiquez votre nom.');
+ if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail))return say('Indiquez une adresse e-mail valide.');
+ if(!okc)return say('Cochez la case pour accepter de recevoir nos communications.');
+ var lab=b.textContent;b.disabled=true;b.textContent='Envoi…';
+ var ctl=typeof AbortController!=='undefined'?new AbortController():null,tm=ctl&&setTimeout(function(){ctl.abort()},15000);
+ fetch(SB+'/rest/v1/abonnes',{method:'POST',headers:{apikey:K,'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify({nom:nom,email:mail,consentement:true,source:'site'}),signal:ctl?ctl.signal:undefined})
+ .then(function(r){clearTimeout(tm);b.disabled=false;b.textContent=lab;
+  if(r.ok){f.reset();say('Merci '+nom+' ! Votre inscription est bien enregistrée.',true)}
+  else if(r.status===409){f.reset();say('Cette adresse est déjà inscrite. Merci !',true)}
+  else say("L'inscription n'a pas pu être enregistrée. Réessayez dans un instant.")},
+  function(){clearTimeout(tm);b.disabled=false;b.textContent=lab;say("Connexion impossible. Réessayez dans un instant.")});
+});})();</script>
 </body>
 </html>
