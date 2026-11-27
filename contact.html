@@ -221,7 +221,7 @@ function xopts(){var n=nights();if(!bfInit){bfInit=true;sel.bf=+pers.value===2}
  $('xopts').innerHTML=XO.map(function(o){var on=!!sel[o.id];return '<div class="xo'+(on?' on':'')+'"><div class="xi"><img src="'+o.img+'" alt="" loading="lazy" onerror="this.remove()"></div><div class="xt"><h4>'+o.n+'</h4><p>'+o.d+(o.night&&n>1?' · '+n+' nuits':'')+'</p></div><div class="xr"><p class="xp">'+fmt(o.p*(o.night?n:1))+' FCFA</p><button type="button" class="add" data-x="'+o.id+'" aria-pressed="'+on+'">'+(on?'Ajouté ✓':'Ajouter')+'</button></div></div>'}).join('');
  $('sub3').textContent='Ajoutez ce dont vous avez besoin : le récapitulatif se met à jour à droite.';cart()}
 $('xopts').addEventListener('click',function(e){var b=e.target.closest('.add');if(!b)return;var k=b.getAttribute('data-x');sel[k]=!sel[k];b.setAttribute('aria-pressed',!!sel[k]);b.textContent=sel[k]?'Ajouté ✓':'Ajouter';b.closest('.xo').classList.toggle('on',!!sel[k]);cart()});
-function chosenBox(){var b=$('chosen');if(!fromRoom||!room){b.hidden=true;$('next1').textContent='Choisir ma chambre';return}var r=R(),ph={'standard':'chambre-standard.jpg','excellence':'chambre-excellence.jpg','twin':'chambre-twin.jpg','f3':'photo-a-venir.jpg'}[r.id];b.hidden=false;b.innerHTML='<img src="'+ph+'" alt=""><p><b>'+r.n+'</b><br>'+fmt(r.p)+' FCFA / nuit</p><a href="#" id="chg">Changer de chambre</a>';$('next1').textContent='Continuer'}
+function chosenBox(){var b=$('chosen');if(!fromRoom||!room){b.hidden=true;$('next1').textContent='Choisir ma chambre';return}var r=R(),ph={'standard':'chambre-standard.jpg','excellence':'chambre-excellence.jpg','twin':'chambre-twin.jpg','f3':'f3-1.jpg'}[r.id];b.hidden=false;b.innerHTML='<img src="'+ph+'" alt=""><p><b>'+r.n+'</b><br>'+fmt(r.p)+' FCFA / nuit</p><a href="#" id="chg">Changer de chambre</a>';$('next1').textContent='Continuer'}
 $('chosen').addEventListener('click',function(e){if(e.target.id==='chg'){e.preventDefault();fromRoom=false;chosenBox()}});
 chosenBox();
 form.addEventListener('click',function(e){var t=e.target;if(t.hasAttribute('data-prev')){show(st===3&&fromRoom?1:st-1);return}
@@ -269,7 +269,7 @@ $('fallback').hidden=false;$('doneTxt').textContent="Nous n'avons pas pu enregis
 }
 });
 
-var PH={'standard':['chambre-standard.jpg'],'excellence':['chambre-excellence.jpg'],'twin':['chambre-twin.jpg'],'f3':['photo-a-venir.jpg']},lb=$('rph'),li=$('rph-img'),lc=$('rph-cap'),lr=null,lk=0;
+var PH={'standard':['chambre-standard.jpg'],'excellence':['chambre-excellence.jpg'],'twin':['chambre-twin.jpg'],'f3':['f3-1.jpg','f3-3.jpg','f3-4.jpg','f3-5.jpg','f3-7.jpg']},lb=$('rph'),li=$('rph-img'),lc=$('rph-cap'),lr=null,lk=0;
 function lshow(){var r=ROOMS.filter(function(x){return x.id===lr})[0],ph=PH[lr],cn=lr==='f3'?r.n:'Chambre '+r.n;li.src=ph[lk];li.alt=cn+', photo '+(lk+1);lc.textContent=cn+' · photo '+(lk+1)+' / '+ph.length}
 function lgo(d){var n=PH[lr].length;lk=(lk+d+n)%n;lshow()}
 $('opts').addEventListener('click',function(e){var b=e.target.closest('.seeph');if(!b)return;e.preventDefault();e.stopPropagation();lr=b.getAttribute('data-room');lk=0;lshow();if(lb.showModal)lb.showModal()},true);
