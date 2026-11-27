@@ -149,3 +149,7 @@
 .cart.card{border:0;background:none;padding:0 0 0 clamp(1rem,3vw,2.4rem);border-left:1px solid var(--rule);border-radius:0}
 @media(max-width:52rem){.xgrid{grid-template-columns:1fr}.cart.card{border-left:0;border-top:1px solid var(--rule);padding:1.4rem 0 0}.wiz .xo{grid-template-columns:7rem 1fr;gap:1rem}.xo .xr{grid-column:1/-1;grid-template-columns:1fr auto;align-items:center;justify-items:start;text-align:left}}
 #reserver .wrap.bkw{max-width:84rem}
+
+/* évite le défilement horizontal pendant l'animation d'apparition */
+.rooms{overflow-x:clip}
+html,body{overflow-x:clip}
